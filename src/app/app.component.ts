@@ -11,9 +11,28 @@ export class AppComponent {
   defaultQuestion = 'teacher';
   answer = '';
   genders = ['male', 'female'];
+
   suggestUserName() {
     const suggestedName = 'Superuser';
+    // ============== setValue ==> to set the whole form
+
+    // this.signupForm.setValue({
+    //   userData: {
+    //     username: suggestedName,
+    //     email: ''
+    //   },
+    //   secret: 'pet',
+    //   questionAnswer: '',
+    //   gender: 'male'
+    // });
+    // ============== patchValue ==> to overwrite parts of the form
+    this.signupForm.form.patchValue({
+      userData: {
+        userName: suggestedName
+      }
+    });
   }
+
   // onSubmit(form: NgForm) {
   //   console.log(form);
   // }
